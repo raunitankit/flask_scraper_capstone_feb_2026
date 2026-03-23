@@ -5,13 +5,31 @@
     <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
 </head>
 
-<body>
-    <h2> Quotes Dashboard </h2>
+<body class="{{ page_type }}">
+  
+
+    <h2>{{ page_title }}</h2>
     <div>
-        {% for rows in tables %}
-            {{ rows | safe  }}
-            <!-- this is equivalent to writing the for loop in pythin like for row in tables: <enter> 4 spaces : print(row) -->
-        {% endfor %}
+        {% if tables %}
+            {% for rows in tables %}
+              {{ rows | safe  }}
+            <!-- this is equivalent to writing the for loop in python like for row in tables: <enter> 4 spaces : print(row) -->
+            {% endfor %}
+        {% elif page_content %}
+            <p>{{ page_content }}</p>
+            <ul>
+              {% for item in enhancements %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+        {% endif %}    
     </div>
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Quotes</a>
+        <a href="{{ url_for('dashboard_books') }}">Books</a>
+        <a href="{{ url_for('about') }}">About</a>
+    </nav>
 </body>
 </html>
+
+

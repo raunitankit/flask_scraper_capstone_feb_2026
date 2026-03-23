@@ -3,4 +3,10 @@ requests
 beautifulsoup4
 pandas
 pytest
+gunicorn
 
+# (base) nancygarg@mac capstone_Feb_2026 % python3 -m venv .venv
+# (base) nancygarg@mac capstone_Feb_2026 % source .venv/bin/activate
+# python install -r requirement.txt
+
+#https://flask-scraper-capstone-feb-2026.onrender.com/

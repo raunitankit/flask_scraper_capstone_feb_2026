@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: flask-scraper-deployment
 spec:
-  replicas: 2
+  replicas: 10
   selector:
     matchLabels:
       app: flask-scraper
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask-scraper
-        image: raunitankit/flask_scraper_capstone_feb_2026:latest
+        image: nancygarg999/flask_scraper_capstone_feb_2026:latest
         ports:
         - containerPort: 5500
 
